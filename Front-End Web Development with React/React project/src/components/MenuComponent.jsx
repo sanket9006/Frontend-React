@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
-import DishDetailComponent from './DishdetailComponent';
 
 export default class Nav extends Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            selectedDish: null
-        }
 
+        console.log(props)
         console.log('Menu component Constructor is invoked')
     }
 
@@ -18,12 +15,6 @@ export default class Nav extends Component {
 
     }
 
-    selectDish(dish) {
-        this.setState({ selectedDish: dish })
-    }
-
-
-
     render() {
 
         console.log('Menu component render is invoked')
@@ -31,7 +22,7 @@ export default class Nav extends Component {
         const menu = this.props.dishes.map((dish, id) => {
             return (
                 <div kay={dish.id} className="col-12 col-md-5 mt-4">
-                    <Card onClick={() => this.selectDish(dish)}>
+                    <Card onClick={() => this.props.onClick(dish.id)}>
                         <CardImg width="100%" src={dish.image} alt={dish.name} />
                         <CardImgOverlay>
                             <CardTitle>
@@ -48,8 +39,6 @@ export default class Nav extends Component {
                 <div className="row">
                     {menu}
                 </div>
-
-                <DishDetailComponent dish={this.state.selectedDish} />
             </div>
         )
     }
