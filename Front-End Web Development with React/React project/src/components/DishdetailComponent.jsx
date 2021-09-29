@@ -5,6 +5,27 @@ const DishDetailComponent = (props) => {
 
     const dish = props.dish;
 
+    const renderComments = () => {
+        return (
+            <ul >
+                {dish.comments.map((comment) => {
+                    return (
+                        <li key={comment.id}>
+                            <p>{comment.comment}</p>
+                            <p> -- {comment.author},
+                                &nbsp;
+                                {new Intl.DateTimeFormat('en-US', {
+                                    year: 'numeric',
+                                    month: 'short',
+                                    day: '2-digit'
+                                }).format(new Date(comment.date))}
+                            </p>
+                        </li>)
+                })}
+            </ul>
+        )
+    }
+
     if (dish != null) {
         return (
             <div className="container">
@@ -23,23 +44,7 @@ const DishDetailComponent = (props) => {
                     </div >
                     <div className='col-12 col-md-5 m-2'>
                         <h4> Comments </h4>
-                        <ul >
-                            {dish.comments.map((comment) => {
-                                return (
-                                    <li key={comment.id}>
-                                        <p>{comment.comment}</p>
-                                        <p> -- {comment.author},
-                                            &nbsp;
-                                            {new Intl.DateTimeFormat('en-US', {
-                                                year: 'numeric',
-                                                month: 'short',
-                                                day: '2-digit'
-                                            }).format(new Date(comment.date))}
-                                        </p>
-                                    </li>)
-                            })}
-                        </ul>
-
+                        {renderComments()}
                     </div>
                 </div>
             </div>
