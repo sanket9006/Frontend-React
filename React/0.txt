@@ -1,0 +1,9 @@
+React Notes
+--------------------------------------------------------------------------------
+4 Modules  - [ One week each ]
+--------------------------------------------------------------------------------
+1. Introduction React
+2. React Components, Router & SPA
+3. Forms & Intro to Redux [Redux Form] -(Flux Architecture)  
+4. More redux and Client-Server Communication
+--------------------------------------------------------------------------------

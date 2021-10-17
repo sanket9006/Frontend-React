@@ -1,0 +1,1 @@
+UI Logic + Rendering Logic --> Inside JSX

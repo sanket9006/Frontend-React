@@ -1,0 +1,14 @@
+git init .
+git status
+
+create index.html
+git status
+
+git add .
+git status
+
+git commit -m "First commit"
+git status
+
+git add origin <------- />
+git push origin master

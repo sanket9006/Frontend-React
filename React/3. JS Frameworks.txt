@@ -1,0 +1,10 @@
+MODEL | VIEW | CONTROLLER
+---------------------------------------------------------------------
+Complex manipulations of DOM --> Main Reason
+---------------------------------------------------------------------
+Hollywood Principle
+    Agent tells actors/actress dont call us, we will call you when we need you.
+    Framework decide when and where to call your code
+
+    Framework == Agent
+---------------------------------------------------------------------

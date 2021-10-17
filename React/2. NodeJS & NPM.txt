@@ -1,0 +1,13 @@
+NodeJS --> Brings JS Browser to Desktop [ AS JAVASCRIPT RUNTIME ]
+package.json [Manifest]
+--------------------------------------------------------------------------
+npm init
+entry point :- index.html / index.js
+
+npm install lite-server --save-dev
+--------------------------------------------------------------------------
+Configure package.json
+
+start : "npm run lite"
+lite : "lite-server"
+--------------------------------------------------------------------------
