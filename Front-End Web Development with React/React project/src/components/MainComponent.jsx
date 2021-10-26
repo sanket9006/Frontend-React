@@ -1,9 +1,10 @@
-import { Navbar, NavbarBrand } from 'reactstrap'
 import Menu from './MenuComponent'
 import React from 'react';
 import dishes from '../shared/dishes';
 import { Component } from 'react';
 import DishDetailComponent from './DishdetailComponent';
+import HeaderComponent from './HeaderComponent';
+import FooterComponent from './FooterComponent';
 
 class MainComponent extends Component {
 
@@ -24,14 +25,7 @@ class MainComponent extends Component {
   render() {
     return (
       <React.Fragment >
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand >
-              sanketpatil.co
-            </NavbarBrand>
-          </div>
-        </Navbar>
-
+        <HeaderComponent />
         <Menu
           dishes={this.state.dishes}
           onClick={dishId => this.selectDish(dishId)}
@@ -40,6 +34,8 @@ class MainComponent extends Component {
         <DishDetailComponent
           dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]}
         />
+
+        <FooterComponent />
       </React.Fragment>
     )
   }
