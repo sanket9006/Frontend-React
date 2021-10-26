@@ -26,22 +26,26 @@ const DishDetailComponent = (props) => {
         )
     }
 
+    const renderImage = () => {
+        return (<div kay={dish.id} className="col-12 col-md-5  m-1">
+            <Card >
+                <CardImg width="100%" src={dish.image} alt={dish.name} />
+                <CardBody>
+                    <CardTitle>
+                        {dish.name}
+                    </CardTitle>
+                    <p>{dish.description}</p>
+                    {console.log(dish.comments)}
+                </CardBody>
+            </Card>
+        </div >)
+    }
+
     if (dish != null) {
         return (
             <div className="container">
                 <div className="row">
-                    <div kay={dish.id} className="col-12 col-md-5  m-1">
-                        <Card >
-                            <CardImg width="100%" src={dish.image} alt={dish.name} />
-                            <CardBody>
-                                <CardTitle>
-                                    {dish.name}
-                                </CardTitle>
-                                <p>{dish.description}</p>
-                                {console.log(dish.comments)}
-                            </CardBody>
-                        </Card>
-                    </div >
+                    {renderImage()}
                     <div className='col-12 col-md-5 m-2'>
                         <h4> Comments </h4>
                         {renderComments()}
