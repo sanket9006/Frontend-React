@@ -49,7 +49,7 @@ class MainComponent extends Component {
           <Route path='/menu/:dishId' component={DishWithId} />
           <Route path='/aboutus' component={() => <About leaders={this.state.leaders} />} />
           <Route exact path='/contactus' component={Contact} />
-          {/* <Redirect to="/home" /> */}
+          <Redirect to="/home" />
         </Switch>
         <FooterComponent />
       </React.Fragment>

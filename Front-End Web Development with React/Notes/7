@@ -1,0 +1,7 @@
+handleBlur method
+
+error / form validation eror object specially
+    Front-End Web Development with React -->  Week 3  --> Exercise (Video): Controlled Form Validation
+
+valid and invalid in form
+        valid = {error.email == ""}
