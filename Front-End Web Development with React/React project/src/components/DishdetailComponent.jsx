@@ -1,14 +1,18 @@
 import React from 'react'
-import { Card, CardImg, CardTitle, CardBody } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Card, CardImg, CardTitle, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
 const DishDetailComponent = (props) => {
 
     const dish = props.dish;
+    const comments = props.comments;
+
+    console.log("Triggered")
 
     const renderComments = () => {
         return (
             <ul >
-                {dish.comments.map((comment) => {
+                {comments.map((comment) => {
                     return (
                         <li key={comment.id}>
                             <p>{comment.comment}</p>
@@ -44,6 +48,23 @@ const DishDetailComponent = (props) => {
     if (dish != null) {
         return (
             <div className="container">
+                <div className="row">
+                    <Breadcrumb>
+                        <BreadcrumbItem>
+                            <Link to={"/menu"}>Menu</Link>
+                        </BreadcrumbItem>
+
+                        <BreadcrumbItem active>
+                            {props.dish.name}
+                        </BreadcrumbItem>
+                    </Breadcrumb>
+                </div>
+
+                <div className="col-12">
+                    <h3>{props.dish.name}</h3>
+                    <br></br>
+                </div>
+
                 <div className="row">
                     {renderImage()}
                     <div className='col-12 col-md-5 m-2'>
