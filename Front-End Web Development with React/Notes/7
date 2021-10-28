@@ -5,3 +5,5 @@ error / form validation eror object specially
 
 valid and invalid in form
         valid = {error.email == ""}
+
+React redux form
