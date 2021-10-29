@@ -30,11 +30,9 @@ class CommentForm extends Component {
         console.log('Current State is: ' + JSON.stringify(values));
         alert('Current State is: ' + JSON.stringify(values));
         this.toggleModal()
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
     }
 
-    // handleSubmit() {
-    //     alert('Current');
-    // }
 
     render() {
         return (
@@ -150,14 +148,13 @@ class CommentForm extends Component {
 const DishDetailComponent = (props) => {
 
     const dish = props.dish;
-    const comments = props.comments;
 
     console.log("Triggered")
 
-    const renderComments = () => {
+    const RenderComments = ({ comment = props.comments }) => {
         return (
             <ul >
-                {comments.map((comment) => {
+                {comment.map((comment) => {
                     return (
                         <li key={comment.id}>
                             <p>{comment.comment}</p>
@@ -214,9 +211,10 @@ const DishDetailComponent = (props) => {
                     {renderImage()}
                     <div className='col-12 col-md-5 m-2'>
                         <h4> Comments </h4>
-                        {renderComments()}
-                        <CommentForm />
-
+                        <RenderComments comment={props.comments}
+                            addComment={props.addComment}
+                            dishId={props.dish.id} />
+                        <CommentForm dishId={props.dishId} addComment={props.addComment} />
                     </div>
                 </div>
             </div>
