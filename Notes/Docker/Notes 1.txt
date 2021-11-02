@@ -1,0 +1,45 @@
+The Docker server 	-->  	dockerd (The dockerd daemon responds to requests from the client via the Docker REST API )
+The Docker client 	-->  	command-line application named docker
+Docker objects    	-->  	volumes, plugins, and other service objects
+Docker Hub			-->  	(SaaS) Docker container registry
+Container image		-->  	It's this image that, when run, becomes our container
+			     			Container image is immutable
+host OS 			-->  	is the OS on which the Docker engine runs
+			     			Docker containers running on Linux share the host OS kernel
+			     			Windows containers need a container OS
+			     			container depends on the OS kernel to manage services such as the file system, network management, 
+							process scheduling, and memory management.
+container OS		-->  	is the OS that is part of the packaged image
+			     			OS is isolated from the host OS and is the environment in which we deploy and 
+			     			run our application.
+
+Stackable Unification File System (Unionfs)
+					-->  	Unionfs is used to create Docker images
+			    			Unionfs allows you to add and remove branches as you build out your file system
+parent image		-->		is a container image from which you create your images.
+Dockerfile			-->		is a text file that contains the instructions we use to build and run a Docker image
+							The following aspects of the image are defined:
+							The base or parent image we use to create the new image
+							Commands to update the base OS and install additional software
+							Build artifacts to include, such as a developed application
+							Services to expose, such as storage and network configuration
+							Command to run when the container is launched
+image tag			-->		An image tag is a text string that is used to version an image.
+							An image is labeled with the latest tag if you don't specify a tag.
+Kubernetes deployment
+					-->		A Kubernetes deployment is an evolution of pods. A deployment wraps the pods into an intelligent
+							object that allows them to scale out.
+							any deployment can update the pods inside it with no visible effect in availability.
+Kubernetes pod		-->		A Kubernetes pod groups containers and applications into logical structure. These pods have no 
+							intelligence and are composed of one or more application containers. Each one has an IP address, 
+							network rules, and exposed ports.
+
+			
+--------------------------------------------------------------------------------------------------------------
+
+Final Production Enviroment
+Pre Production Enviroment
+Quality Assurance Environment
+Development Enviroment
+
+--------------------------------------------------------------------------------------------------------------

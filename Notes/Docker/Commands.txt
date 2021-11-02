@@ -1,0 +1,24 @@
+docker build -t temp-ubuntu .
+        -->     build command
+
+docker rmi temp-ubuntu:version-1.0
+        -->     remove an image
+
+docker ps -a
+        -->     view available containers ( in all states, pass the -a argument.)
+
+docker run -d tmp-ubuntu
+        -->     run a container (to run the container with our website in the background, add the -d flag.)
+
+docker pause happy_wilbur
+        -->     pause a container    
+
+docker restart happy_wilbur
+        -->     To restart containers
+
+docker stop happy_wilbur
+        -->     stop a container
+
+docker rm happy_wilbur
+        -->     remove a container
+
