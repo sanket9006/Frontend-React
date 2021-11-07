@@ -1,6 +1,7 @@
 import { createStore } from 'redux'
 
-const initialState = 1;
+const initialState = 1000
+;
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -8,7 +9,7 @@ const reducer = (state, action) => {
             return state + action.payload;
         case 'WITHDRAW':
             return state - action.payload;
-        case 'BANKRUPT':
+        case 'CLOSE_ACCOUNT':
             return state = action.payload
         default:
             return state
@@ -27,7 +28,7 @@ store.dispatch({ type: "DEPOSIT", payload: 2 })
 store.dispatch({ type: "DEPOSIT", payload: 55 })
 store.dispatch({ type: "WITHDRAW", payload: 55 })
 store.dispatch({ type: "WITHDRAW", payload: 550 })
-store.dispatch({ type: "BANKRUPT", payload: 0 })
+store.dispatch({ type: "CLOSE_ACCOUNT", payload: 0 })
 
 
 const redux = () => {
