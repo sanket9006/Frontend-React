@@ -1,38 +1,37 @@
 import { createStore } from 'redux'
 
-const initialState = 1000
-;
-
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'DEPOSIT':
-            return state + action.payload;
-        case 'WITHDRAW':
+        case "withdraw":
             return state - action.payload;
-        case 'CLOSE_ACCOUNT':
-            return state = action.payload
+        case "deposit":
+            return state + action.payload;
+        case "closeaccount":
+            return state = 0
         default:
             return state
     }
 }
 
-const store = createStore(reducer, initialState)
+const store = createStore(reducer, 1);
 
 store.subscribe(() => {
     console.log(store.getState());
 })
 
-store.dispatch({ type: "DEPOSIT", payload: 1 })
-store.dispatch({ type: "DEPOSIT", payload: 10 })
-store.dispatch({ type: "DEPOSIT", payload: 2 })
-store.dispatch({ type: "DEPOSIT", payload: 55 })
-store.dispatch({ type: "WITHDRAW", payload: 55 })
-store.dispatch({ type: "WITHDRAW", payload: 550 })
-store.dispatch({ type: "CLOSE_ACCOUNT", payload: 0 })
+store.dispatch({
+    type: "deposit",
+    payload: 10
+})
 
+store.dispatch({
+    type: "deposit",
+    payload: 100
+})
 
-const redux = () => {
-    return
-}
+store.dispatch({
+    type: "withdraw",
+    payload: 100
+})
 
-export default redux
+export default reducer;

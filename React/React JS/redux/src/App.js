@@ -1,4 +1,5 @@
 import './App.css';
+// import redux from './Components/redux_plain_javascript'
 import redux from './Components/redux'
 
 function App() {

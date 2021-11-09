@@ -8,9 +8,9 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  /* .App-logo {
     animation: App-logo-spin infinite 20s linear;
-  }
+  } */
 }
 
 .App-header {
@@ -35,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  min-width: 180px;
+  padding: 12px;
+  font-weight: bold;
+  margin: 5px;
+  font-size: large;
+  border-radius: 8px;
+  color: black;
+  background-color: #61DAFB;
 }
